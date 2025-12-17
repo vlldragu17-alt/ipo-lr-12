@@ -26,7 +26,7 @@ def add_client_callback(sender, app_data, user_data):
     client = Client(name, weight, vip)
     company.add_client(client)
 
-    # Добавляем строку в таблицу клиентов
+    # Добавляю строку в таблицу клиентов
     with dpg.table_row(parent="clients_table"):
         dpg.add_text(client.name)
         dpg.add_text(str(client.cargo_weight))
@@ -85,7 +85,7 @@ dpg.create_context()
 # === Подключение шрифта с поддержкой кириллицы ===
 with dpg.font_registry():
     default_font = dpg.add_font("C:/Windows/Fonts/arial.ttf", 16)
-    # Явно добавляем диапазон символов кириллицы
+    # добавляю диапазон символов кириллицы
     dpg.add_font_range(0x0400, 0x04FF, parent=default_font)
 dpg.bind_font(default_font)
 
@@ -143,3 +143,4 @@ dpg.setup_dearpygui()
 dpg.show_viewport()
 dpg.start_dearpygui()
 dpg.destroy_context()
+
